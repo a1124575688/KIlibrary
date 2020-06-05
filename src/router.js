@@ -24,6 +24,11 @@ const routes = [
         name: 'testPage',
         component: () => import('@cp/TestPage/TestPage.vue')
     },
+    {
+        path: '/fnText',
+        name: 'fnText',
+        component: () => import('@cp/FnText/FnText.vue')
+    },
 ];
 
 const router = new VueRouter({

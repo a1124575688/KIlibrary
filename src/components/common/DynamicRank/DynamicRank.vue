@@ -96,7 +96,7 @@
                     if(timing <= 1500){
                         window.requestAnimationFrame(handler);
                     }else {
-                        that.rankList = that.rankListRest;
+                        // that.rankList = that.rankListRest;
                         that.isBtn = true
                     }
                 }
@@ -150,6 +150,7 @@
             font-weight: bold;
             margin-top: 20px;
             cursor: pointer;
+            color: chartreuse;
         }
     }
     .flip-list-move{

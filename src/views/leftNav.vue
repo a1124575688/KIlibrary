@@ -17,6 +17,10 @@
                 <i class="el-icon-setting"></i>
                 <span slot="title">组件库</span>
             </el-menu-item>
+            <el-menu-item index="fnText">
+                <i class="el-icon-chat-line-square"></i>
+                <span slot="title">功能叙述</span>
+            </el-menu-item>
             <el-menu-item index="testPage">
                 <i class="el-icon-document"></i>
                 <span slot="title">页面调试(本地使用)</span>
