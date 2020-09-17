@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    /*参数：
+    /**参数：
     * width：整个进度条宽度
     * height：进度条高度
     * percent：进度条百分比
@@ -69,7 +69,6 @@
             flex: 1;
             background-color: rgba(255,255,255,.2);
             height: 1px;
-
         }
     }
 </style>

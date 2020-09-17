@@ -29,6 +29,11 @@ const routes = [
         name: 'fnText',
         component: () => import('@cp/FnText/FnText.vue')
     },
+    {
+        path: '/mapBox',
+        name: 'mapBox',
+        component: () => import('@cp/MapBox/MapBox.vue')
+    },
 ];
 
 const router = new VueRouter({

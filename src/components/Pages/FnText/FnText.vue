@@ -1,9 +1,10 @@
 <template>
     <div class="fn-text-box">
-        <div class="fn-text-item" v-for="(item,index) in pageData" :key="item.name">
-            <div class="fn-text">{{index + 1}}.{{item.title}}</div>
-            <pre class="fn-code-show">{{item.content}}</pre>
-        </div>
+        <el-collapse v-model="activeNames" @change="handleChange" class="fn-text-item">
+            <el-collapse-item :title="index + 1 + '.' + item.title" :name="index + 1"  v-for="(item,index) in pageData" :key="item.name">
+                <pre class="fn-code-show">{{item.content}}</pre>
+            </el-collapse-item>
+        </el-collapse>
     </div>
 </template>
 
@@ -12,12 +13,18 @@
     export default {
         name: "FnText",
         created(){
-            console.log('pageData',pageData)
+
         },
         data(){
             return{
-                pageData:pageData.fnTextPageData
+                pageData:pageData.fnTextPageData,
+                activeNames: ['1']
             }
+        },
+        methods:{
+            handleChange(val) {
+                console.log(val)
+            },
         }
     }
 </script>
@@ -27,7 +34,7 @@
         height: 900px;
         overflow-y: auto;
         .fn-text-item{
-            margin-top: 10px;
+            margin-top: 20px;
             .fn-text{
                 font-size: 22px;
                 color: black;
@@ -36,7 +43,10 @@
             .fn-code-show{
                 font-size: 20px;
                 color: black;
-                padding-left: 20px;
+                padding: 20px;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+                background-color: #f5f5f5;
             }
         }
     }

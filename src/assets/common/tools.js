@@ -18,6 +18,11 @@ let tool = {
         } else {
             return Math.random() * (max - min + 1) + min;
         }
-    }
+    },
+    isType(type,target){
+        const Tag = `[object ${type}]`;
+        return Object.prototype.toString.call(target) === Tag
+    },
+
 };
 export {tool}
