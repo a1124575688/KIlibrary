@@ -11,5 +11,5 @@ module.exports = {
             .set('@c', path.resolve(__dirname, './src/components'))
             .set('@cc', path.resolve(__dirname, './src/components/common'))
             .set('@com', path.resolve(__dirname, './src/assets/common'))
-    },
-}
+    }
+};
