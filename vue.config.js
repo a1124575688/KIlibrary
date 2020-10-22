@@ -12,6 +12,6 @@ module.exports = {
             .set('@cc', path.resolve(__dirname, './src/components/common'))
             .set('@com', path.resolve(__dirname, './src/assets/common'))
     },
-    publicPath:'a1124575688.github.io/KIlibrary/dist/'
+    publicPath:'/'
 };
 
