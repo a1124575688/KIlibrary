@@ -1,28 +1,41 @@
 <template>
     <div class="test-box">
-        <CircleRing></CircleRing>
+        <div @click="btnEvent($event)">按钮</div>
+        <div class="wd" :class="{'close-pop':isClose}" :style="{left:distanceX,top:distanceY}">
+        </div>
     </div>
 </template>
 
 <script>
     /*插入要调试的组件*/
 
-    import CircleRing from '@cc/CanvasAmRing/CircleRing.vue'
     export default {
         name: "TestPage",
         data(){
           return{
-
+              isClose:false,
+              distanceX:'50%',
+              distanceY:'50%'
           }
         },
         methods:{
+            btnEvent(e){
+                this.isClose = !this.isClose;
+                if(this.isClose){
+                    this.distanceX = e.clientX + 'px';
+                    this.distanceY = e.clientY + 'px';
+                }else {
+                    this.distanceX = '50%';
+                    this.distanceY = '50%';
+                }
+
+
+            }
         },
         mounted(){
 
         },
-        components:{
-            CircleRing
-        },
+        components:{},
     }
 </script>
 
@@ -35,29 +48,26 @@
         *{
             color: black;
         }
-        .list-box{
-            width: 200px;
+        div{
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .wd{
+            width: 500px;
             height: 500px;
-            /*overflow-y: auto;*/
-            border: 1px solid white;
-            .list-item{
-                height: 100px;
-                width: 100%;
-                border: 1px solid white;
-                /*transform: translateX(20px);*/
-            }
+            border: 3px solid crimson;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: .5s;
+            overflow: hidden;
+            white-space: nowrap;
         }
-        .fade-enter,.fade-leave-to{
-            opacity: 0;
-            transform: translateX(20px);
+        .close-pop{
+            transform: scale(0);
+            width: 0;
+            height: 0;
         }
-        .fade-enter-to,.fade-leave{
-           opacity: 1;
-            transform: translateX(0);
-        }
-        .fade-enter-active,.fade-leave-active{
-            transition: 5s;
-        }
-
     }
 </style>
