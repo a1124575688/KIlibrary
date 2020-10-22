@@ -9,17 +9,9 @@
                 text-color="#fff"
                 :router="true"
                 active-text-color="#ffd04b">
-            <el-menu-item index="chart">
-                <i class="el-icon-s-tools"></i>
-                <span slot="title">图表库</span>
-            </el-menu-item>
             <el-menu-item index="component">
                 <i class="el-icon-setting"></i>
                 <span slot="title">组件库</span>
-            </el-menu-item>
-            <el-menu-item index="fnText">
-                <i class="el-icon-chat-line-square"></i>
-                <span slot="title">功能叙述</span>
             </el-menu-item>
             <el-menu-item index="testPage">
                 <i class="el-icon-document"></i>
