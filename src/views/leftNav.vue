@@ -15,7 +15,7 @@
             </el-menu-item>
             <el-menu-item index="testPage">
                 <i class="el-icon-document"></i>
-                <span slot="title">页面调试(本地使用)</span>
+                <span slot="title">页面调试</span>
             </el-menu-item>
             <el-menu-item index="mapBox">
                 <i class="el-icon-document"></i>
