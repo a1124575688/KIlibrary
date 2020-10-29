@@ -1,73 +1,131 @@
 <template>
     <div class="test-box">
-        <div @click="btnEvent($event)">按钮</div>
-        <div class="wd" :class="{'close-pop':isClose}" :style="{left:distanceX,top:distanceY}">
-        </div>
+        <TreeCp :list="treeList"></TreeCp>
     </div>
 </template>
 
 <script>
     /*插入要调试的组件*/
-
+    import TreeCp from '@cp/TestPage/TreeCp.vue'
     export default {
         name: "TestPage",
+        components:{TreeCp},
         data(){
           return{
-              isClose:false,
-              distanceX:'50%',
-              distanceY:'50%'
+              treeList:{
+                  name:'外层盒子',          //名字
+                  unfold:true,              //是否展开,默认展开
+                  childrenList:[            //子项列表
+                      {
+                      name:'第一级 一',
+                      unfold:false,
+                      childrenList:[
+                          {
+                              name:'第二级 一',
+                              unfold:true,
+                              childrenList:[
+                                  {
+                                      name:'第三级 一',
+                                      unfold:false,
+                                      childrenList:[
+                                          {
+                                              name:'第四级 一',
+                                              unfold:false,
+                                              childrenList:[
+                                                  {
+                                                      name:'第五级 一',
+                                                      unfold:false,
+                                                      childrenList:[
+                                                          {
+                                                              name:'第六级 一',
+                                                              unfold:false,
+                                                              childrenList:[
+                                                                  {
+                                                                      name:'第七级 一',
+                                                                      unfold:false,
+                                                                      childrenList:[
+                                                                          {
+                                                                              name:'第八级 一',
+                                                                              unfold:false,
+
+                                                                          },
+                                                                      ]
+                                                                  },
+                                                              ]
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      name:'第五级 二',
+                                                      unfold:true,
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              name:'第四级 二',
+                                              unfold:true,
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      name:'第三级 二',
+                                      unfold:true,
+                                  }
+                              ]
+                          },
+                          {
+                              name:'第二级 二',
+                              unfold:true,
+                          }
+                      ]
+                  },{
+                      name:'第一级 二',
+                      unfold:true,
+                      childrenList:[
+                          {
+                              name:'第二级 一',
+                              unfold:true,
+                              childrenList:[
+                                  {
+                                      name:'第三级 一',
+                                      unfold:true,
+                                      childrenList:[
+                                          {
+                                              name:'第四级 一',
+                                              unfold:true,
+                                          },
+                                          {
+                                              name:'第四级 二',
+                                              unfold:true,
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      name:'第三级 二',
+                                      unfold:true,
+                                  }
+                              ]
+                          },
+                          {
+                              name:'第二级 二',
+                              unfold:true,
+                          }
+                      ]
+                  }]
+              }
           }
         },
         methods:{
-            btnEvent(e){
-                this.isClose = !this.isClose;
-                if(this.isClose){
-                    this.distanceX = e.clientX + 'px';
-                    this.distanceY = e.clientY + 'px';
-                }else {
-                    this.distanceX = '50%';
-                    this.distanceY = '50%';
-                }
 
-
-            }
         },
         mounted(){
 
-        },
-        components:{},
+        }
     }
 </script>
 
 <style scoped lang="scss">
     .test-box{
-        width: 150px;
-        height: 100%;
-        padding-left: 20px;
-        padding-top: 20px;
-        *{
-            color: black;
-        }
-        div{
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .wd{
-            width: 500px;
-            height: 500px;
-            border: 3px solid crimson;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transition: .5s;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .close-pop{
-            transform: scale(0);
-            width: 0;
-            height: 0;
-        }
+
     }
 </style>

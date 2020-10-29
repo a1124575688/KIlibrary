@@ -135,7 +135,7 @@
             margin-top: 20px;
             display: flex;
             align-items: center;
-            color: black !important;
+            color: white !important;
             font-weight: bold;
             font-size: 24px;
             .name{

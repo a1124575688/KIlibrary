@@ -14,7 +14,10 @@ export default {
   name: 'App',
   components: {
     leftNav
-  }
+  },
+  created() {
+    console.log('process.env.npm_config_argv',process.env)
+  },
 }
 </script>
 

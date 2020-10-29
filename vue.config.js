@@ -1,9 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-
+console.log('process.env.npm_config_argv',process.env)
+const scriptName = JSON.parse(process.env.npm_config_argv).original[1];
 module.exports = {
     chainWebpack: config => {
-        // 用cdn方式引入
+        // 用配置绝对路径
         config.resolve.alias
             .set('@image', path.resolve(__dirname, './src/assets/image'))
             .set('@views', path.resolve(__dirname, './src/views'))
@@ -12,6 +13,6 @@ module.exports = {
             .set('@cc', path.resolve(__dirname, './src/components/common'))
             .set('@com', path.resolve(__dirname, './src/assets/common'))
     },
-    publicPath:'/KIlibrary/dist/'
+    publicPath:scriptName === 'build' ? '/KIlibrary/dist/':'/'
 };
 

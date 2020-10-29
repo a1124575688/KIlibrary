@@ -10,11 +10,6 @@ const routes = [
         redirect: '/chart',
     },
     {
-        path: '/chart',
-        name: 'chart',
-        component: () => import('@cp/ChartsBox/ChartsBox.vue')
-    },
-    {
         path: '/component',
         name: 'component',
         component: () => import('@cp/ComponentBox/ComponentBox.vue')
