@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <leftNav></leftNav>
+    <PageHeader></PageHeader>
+    <LeftNav></LeftNav>
     <div class="main">
       <router-view />
     </div>
@@ -9,11 +10,13 @@
 
 <script>
 
-import leftNav from '@views/leftNav.vue'
+import PageHeader from '@views/PageHeader.vue'
+import LeftNav from '@views/LeftNav.vue'
 export default {
   name: 'App',
   components: {
-    leftNav
+    PageHeader,
+    LeftNav
   },
   created() {
     console.log('process.env.npm_config_argv',process.env)
@@ -21,14 +24,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
   #app{
     width: 1920px;
     height: 1080px;
-    display: flex;
+    .main{
+      width: 1604px;
+      margin-left: 300px;
+      margin-top: 60px;
+    }
 }
-  .main{
-    flex: 1;
-    padding: 40px;
-  }
+
 </style>
