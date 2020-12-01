@@ -7,7 +7,9 @@
                     <img :src="require('@image/三角右.png')" :class="{'img-rotate':item.open}">
                     <div>{{item.name}}</div>
                 </div>
-                <div class="item-child"></div>
+                <div class="item-child" v-show="item.child.open">
+                    <div v-for="key in item.child.list" :key="key.name">{{key.name}}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -19,19 +21,39 @@
             return{
                 directoryList:[
                     {
-                        name:'原型统筹',
-                        open:false
+                        name:'小步创想手册',
+                        open:false,
+                        child:{
+                            open:false,
+                            list:[{
+                                name:'各种账号'
+                            },{
+                                name:'各种账号2'
+                            }]
+                        }
                     },
                     {
                         name:'组件查看',
-                        open:false
+                        open:false,
+                        child:{
+                            open:false,
+                            list:[{
+                                name:'各种账号'
+                            },{
+                                name:'各种账号2'
+                            }]
+                        }
                     }
                 ]
             }
         },
         methods: {
             itemEvent(item){
-                item.open = !item.open
+                item.open = !item.open;
+                item.child.open = !item.child.open
+                this.$store.commit('setHeadNavText',{
+                    first:item.name
+                })
             }
         },
         components:{
@@ -77,6 +99,20 @@
                }
                .item-name:hover{
                    background: #f5f5f5;
+               }
+               .item-child{
+                   div{
+                       font-size: 12px;
+                       color: #595959;
+                       padding-left: 48px;
+                       margin-top: 10px;
+                       height: 26px;
+                       line-height: 26px;
+                   }
+                   div:hover{
+                       background: #f5f5f5;
+                       color: rgba(89,89,89,.8);
+                   }
                }
            }
        }

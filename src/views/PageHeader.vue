@@ -4,16 +4,21 @@
         <div class="nav-title">
             <div>个人中心</div>
             <div class="bias-line">/</div>
-            <div>小步创想手册</div>
+            <div>{{getNavText.first}}</div>
             <div class="bias-line">/</div>
-            <div>某某链接</div>
+            <div>{{getNavText.second}}</div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "PageHeader"
+        name: "PageHeader",
+        computed:{
+            getNavText(){
+                return this.$store.state.headNavText
+            }
+        }
     }
 </script>
 
