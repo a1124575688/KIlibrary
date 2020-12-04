@@ -15,6 +15,11 @@ const routes = [
         component: () => import('@cp/ComponentBox/ComponentBox.vue')
     },
     {
+        path: '/svgRing',
+        name: 'svgRing',
+        component: () => import('@cp/ComponentDom/ComponentDom.vue')
+    },
+    {
         path: '/testPage',
         name: 'testPage',
         component: () => import('@cp/TestPage/TestPage.vue')

@@ -34,7 +34,7 @@
                 default: '#ff5a0c'
             },
             percent: {
-                default:50
+                default:100
             },
             fontSize: {
                 default: 24

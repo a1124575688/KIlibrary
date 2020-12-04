@@ -32,6 +32,9 @@ export default {
       width: 1604px;
       margin-left: 300px;
       margin-top: 60px;
+      background: #272822;
+      padding-left: 40px;
+      padding-top: 30px;
     }
 }
 

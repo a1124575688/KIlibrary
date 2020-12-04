@@ -8,7 +8,7 @@
                     <div>{{item.name}}</div>
                 </div>
                 <div class="item-child" v-show="item.child.open">
-                    <div v-for="key in item.child.list" :key="key.name">{{key.name}}</div>
+                    <router-link v-for="key in item.child.list" :key="key.name" :to="{path:key.path}" tag="div" @click.native="setName(key.name)">{{key.name}}</router-link>
                 </div>
             </div>
         </div>
@@ -21,14 +21,16 @@
             return{
                 directoryList:[
                     {
-                        name:'小步创想手册',
-                        open:false,
+                        name:'小步创想组件',
+                        open:true,
                         child:{
-                            open:false,
+                            open:true,
                             list:[{
-                                name:'各种账号'
+                                name:'开发常用组件',
+                                path:'/svgRing'
                             },{
-                                name:'各种账号2'
+                                name:'各种账号2',
+                                path:'/mapBox'
                             }]
                         }
                     },
@@ -54,6 +56,11 @@
                 this.$store.commit('setHeadNavText',{
                     first:item.name
                 })
+            },
+            setName(name){
+                this.$store.commit('setHeadNavText',{
+                    second:name
+                })
             }
         },
         components:{
@@ -62,6 +69,9 @@
     }
 </script>
 <style scoped lang="scss">
+    .router-link-active{
+        color: #25b864 !important;
+    }
    .left-nav{
        width: 300px;
        height: 876px;

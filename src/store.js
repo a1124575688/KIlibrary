@@ -5,8 +5,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state:{
         headNavText:{
-            first:'',
-            second:''
+            first:'小步创想组件',
+            second:'开发常用组件'
         }
     },
     mutations:{

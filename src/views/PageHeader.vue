@@ -1,12 +1,12 @@
 <template>
     <div class="page-header">
-        <img :src="require('@image/XuVpGqBFxXplzvLjJBZB.svg')" width="32">
+        <img :src="require('@image/1606899329_894881.png')" width="52">
         <div class="nav-title">
             <div>个人中心</div>
             <div class="bias-line">/</div>
             <div>{{getNavText.first}}</div>
             <div class="bias-line">/</div>
-            <div>{{getNavText.second}}</div>
+            <div style="font-weight: bold">{{getNavText.second}}</div>
         </div>
     </div>
 </template>
