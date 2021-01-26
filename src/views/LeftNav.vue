@@ -29,7 +29,7 @@
                                 name:'开发常用组件',
                                 path:'/svgRing'
                             },{
-                                name:'各种账号2',
+                                name:'地图调试',
                                 path:'/mapBox'
                             }]
                         }
